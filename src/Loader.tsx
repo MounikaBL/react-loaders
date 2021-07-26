@@ -1,49 +1,55 @@
-import React, { Component } from 'react'
+import React, { Component } from "react"
+
+interface Props {
+    loaders: Array<any>;
+}
 
 export const Loader1 = (): JSX.Element => {
-    return <div className="loader1">
-        <div className="loader">
-            <div className="loading">
+    return (
+        <div className="loader1">
+            <div className="loader">
+                <div className="loading">
 
+                </div>
+            </div>
+
+            <div className="loader">
+                <div className="loading">
+
+                </div>
+            </div>
+            <div className="loader">
+                <div className="loading">
+
+                </div>
+            </div>
+            <div className="loader">
+                <div className="loading">
+
+                </div>
+            </div>
+            <div className="loader">
+                <div className="loading">
+
+                </div>
+            </div>
+            <div className="loader">
+                <div className="loading">
+
+                </div>
+            </div>
+            <div className="loader">
+                <div className="loading">
+
+                </div>
+            </div>
+            <div className="loader">
+                <div className="loading">
+
+                </div>
             </div>
         </div>
-
-        <div className="loader">
-            <div className="loading">
-
-            </div>
-        </div>
-        <div className="loader">
-            <div className="loading">
-
-            </div>
-        </div>
-        <div className="loader">
-            <div className="loading">
-
-            </div>
-        </div>
-        <div className="loader">
-            <div className="loading">
-
-            </div>
-        </div>
-        <div className="loader">
-            <div className="loading">
-
-            </div>
-        </div>
-        <div className="loader">
-            <div className="loading">
-
-            </div>
-        </div>
-        <div className="loader">
-            <div className="loading">
-
-            </div>
-        </div>
-    </div>
+    );
 }
 
 export const Loader2 = (): JSX.Element => {
@@ -81,26 +87,33 @@ export const Loader4 = (): JSX.Element => {
 }
 
 export const Loader5 = (): JSX.Element => {
-    return (<div className="loader5">
-        <div className="loader">
+    return (
+        <div className="loader5">
+            <div className="wrapper">
+                <div className="loader">
 
+                </div>
+            </div>
         </div>
-    </div>);
+    );
 }
 
 export const Loader6 = (): JSX.Element => {
     return (
         <div className="loader6">
-            <div className="circle1">
+            <div className="wrapper">
+                <div className="circle1">
 
-            </div>
-            <div className="circle2">
+                </div>
+                <div className="circle2">
 
+                </div>
             </div>
+
         </div>);
 }
 
-export default class Loader extends Component<any, any> {
+export default class Loader extends Component<Props, any> {
 
     callComponent = (index: number) => {
         switch (index) {
@@ -121,9 +134,10 @@ export default class Loader extends Component<any, any> {
         }
     }
     render() {
-        console.log("mmmmmmm", this.props.index);
         return (
-            this.callComponent(this.props.index)
+            this.props.loaders.map((loader: any) => {
+                return this.callComponent(loader.id)
+            })
         );
     }
 }
