@@ -56,7 +56,7 @@ body {
       top: calc(50% - 15px);
       left:  calc(50% - 15px);
       border-radius: 50%;
-      animation: rotate 3s infinite ease;
+      animation: rotate 2.5s infinite ease;
       animation-delay: -10s;
      }
      
@@ -114,7 +114,7 @@ body {
       top: 50%;
       background-color: #FFFFFF;
       border-radius: 50%;
-      animation: fade-in 2s infinite ease;
+      animation: fade-in 2s infinite linear;
     }
     
     span:nth-child(1){
@@ -136,7 +136,7 @@ body {
     
     @keyframes fade-in {
       0% {
-          opacity: 0.2;
+        opacity: 0.2;
         width: 5px;
         height: 5px
        
